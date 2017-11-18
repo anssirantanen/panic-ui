@@ -1,14 +1,14 @@
+import { combineReducers } from 'redux'
+import {frameListReducer} from './frame_list'
 
-import { combineReducers } from 'redux';
-
-const fakeRed = (state = [], action) => {
-    console.log(action)
-    return ['1','2']
+const fakeFrame = (state = [], action) => {
+  console.log(action)
+    return [...state, action.payload]
 }
 
 
 const rootReducer = combineReducers({
-  fake: fakeRed
+  frames: frameListReducer
 });
 
 export default rootReducer;

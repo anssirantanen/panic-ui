@@ -10,15 +10,20 @@ export class MessageList extends React.Component {
   }
 
   render(){
-    console.log(this.props.banana)
+    console.log(this.props.frames)
     return(
-      <div>List</div>
+      <div><ul>{this.props.frames.map((e) => {
+        return(<li>{e}</li>)
+      })
+      }</ul>
+      </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return { banana : 'banana'}
+  console.log(state)
+  return { frames : state.frames}
 }
 
 
